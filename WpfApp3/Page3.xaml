@@ -1,0 +1,26 @@
+﻿<Page x:Class="WpfApp3.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+    <Grid Background="Bisque">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="199*"/>
+            <RowDefinition Height="26*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DG" Loaded="DG_Loaded" AutoGenerateColumns="False" CanUserAddRows="False" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="OrderID" Binding="{Binding OrderID}" Width="100"/>
+                <DataGridTextColumn Header="User" Binding="{Binding X.Username}" Width="2*"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding X.Roles.RoleName}" Width="90"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding OrderDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="2*"  />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="nazad" Grid.Row="1" Click="nazad_Click" Content="Вернуться назад" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="28" Width="101"/>
+    </Grid>
+</Page>
